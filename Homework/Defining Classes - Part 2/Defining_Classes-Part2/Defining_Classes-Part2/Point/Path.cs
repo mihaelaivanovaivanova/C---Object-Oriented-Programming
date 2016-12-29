@@ -77,5 +77,13 @@ namespace Defining_Classes_Part2.Point
             this.sequenceOfPoints.RemoveAt(index);
         }
 
+        public void Print(Path path)
+        {
+            for (int i = 0; i < path.Length(); i++)
+            {
+                Console.WriteLine(path[i].ToString());
+            }
+        }
+
     }
 }

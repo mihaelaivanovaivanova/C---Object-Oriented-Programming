@@ -28,8 +28,11 @@ namespace Defining_Classes_Part2
                 Console.WriteLine(somePath[i].ToString());
             }
 
-            PathStorage.WritePoint();
-            PathStorage.ReadPoints(8);
+            PathStorage.WritePoint(3);
+
+            Console.WriteLine("-------------------------------------");
+            //PathStorage.ReadPoints(15);
+
 
         }
     }
