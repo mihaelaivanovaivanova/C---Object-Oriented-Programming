@@ -1,11 +1,6 @@
-﻿using Defining_Classes_Part2.Point;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace Defining_Classes_Part2
+namespace Defining_Classes_Part2.Point
 {
     class StartUp
     {
@@ -32,8 +27,6 @@ namespace Defining_Classes_Part2
 
             Console.WriteLine("-------------------------------------");
             //PathStorage.ReadPoints(15);
-
-
         }
     }
 }
