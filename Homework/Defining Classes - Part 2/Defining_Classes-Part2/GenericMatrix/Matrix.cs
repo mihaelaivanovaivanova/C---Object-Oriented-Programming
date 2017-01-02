@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GenericMatrix
 {
-    public class Matrix<T> where T : IEnumerable<T>, IConvertible, IComparable<T>
+    public class Matrix<T> where T : IConvertible, IComparable
     {
         private T[,] matrix;
 

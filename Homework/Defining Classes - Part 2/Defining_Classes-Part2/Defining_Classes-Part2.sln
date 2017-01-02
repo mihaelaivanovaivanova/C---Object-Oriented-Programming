@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generic_Class", "Generic_Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericMatrix", "GenericMatrix\GenericMatrix.csproj", "{97995DD9-CEEB-4D96-8E98-2F4B5E63A8B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersionAttribute", "VersionAttribute\VersionAttribute.csproj", "{F6380F70-33A9-4AE6-B4EF-898C09D7B4B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{97995DD9-CEEB-4D96-8E98-2F4B5E63A8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97995DD9-CEEB-4D96-8E98-2F4B5E63A8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97995DD9-CEEB-4D96-8E98-2F4B5E63A8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6380F70-33A9-4AE6-B4EF-898C09D7B4B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6380F70-33A9-4AE6-B4EF-898C09D7B4B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6380F70-33A9-4AE6-B4EF-898C09D7B4B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6380F70-33A9-4AE6-B4EF-898C09D7B4B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
