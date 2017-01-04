@@ -65,6 +65,39 @@ the students by first name and last name in descending order. */
                 Console.WriteLine($"{student.FirstName} {student.LastName}");
             }
             Console.WriteLine("---------------------");
+
+            /*Problem 9. Student groups
+Create a class Student with properties FirstName, LastName, FN, Tel, Email, Marks (a List), GroupNumber.
+Create a List<Student> with sample students. Select only the students that are from group number 2.
+Use LINQ query. Order the students by FirstName.*/
+
+            var filteredByGroup = studentsArr.Where(x => x.GroupNumber == 2);
+            foreach (Students student in filteredByGroup)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
+
+            /*Problem 10. Student groups extensions
+Implement the previous using the same query expressed with extension methods.*/
+
+            var filteredByGroupExt = studentsArr.FilterByGroup(2);
+            foreach (Students student in filteredByGroupExt)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
+
+            /*Problem 11. Extract students by email
+Extract all students that have email in abv.bg.
+Use string methods and LINQ.*/
+
+            var filteredByEmail = studentsArr.FilterByEmail("@abv.bg");
+            foreach (Students student in filteredByEmail)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
         }
     }
 }

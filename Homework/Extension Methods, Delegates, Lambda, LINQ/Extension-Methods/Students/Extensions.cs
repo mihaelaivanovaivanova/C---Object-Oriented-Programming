@@ -50,5 +50,23 @@ namespace Students
 
             return result;
         }
+
+        public static IEnumerable<T> FilterByGroup<T>(this IEnumerable<T> students, int groupNum)where T: Students
+        {
+            var result = from student in students
+                         where student.GroupNumber.CompareTo(groupNum) == 0
+                         select student;
+
+            return result;
+        }
+
+        public static IEnumerable<T> FilterByEmail<T>(this IEnumerable<T> students, string pattern) where T : Students
+        {
+            var result = from student in students
+                         where student.Email.Contains(pattern)
+                         select student;
+
+            return result;
+        }
     }
 }
