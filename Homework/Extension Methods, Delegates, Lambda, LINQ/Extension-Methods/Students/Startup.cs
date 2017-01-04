@@ -98,6 +98,40 @@ Use string methods and LINQ.*/
                 Console.WriteLine($"{student.FirstName} {student.LastName}");
             }
             Console.WriteLine("---------------------");
+
+            /*Problem 12. Extract students by phone
+           Extract all students with phones in Sofia.
+           Use LINQ.*/
+
+            var filteredByPhone = studentsArr.FilterByPhone("02");
+            foreach (Students student in filteredByPhone)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
+
+            /*Problem 13. Extract students by marks
+Select all students that have at least one mark Excellent (6) into a new anonymous class that has properties – FullName and Marks.
+Use LINQ.*/
+
+            var filteredByMarks = studentsArr.FilterByMarks(6);
+            foreach (var student in filteredByMarks)
+            {
+                Console.WriteLine($"{student}");
+            }
+            Console.WriteLine("---------------------");
+
+            /*Problem 14. Extract students with two marks
+Write down a similar program that extracts the students with exactly two marks "2".
+Use extension methods.*/
+
+            var filteredByMarksCount = studentsArr.FilterByMarksCount(2);
+            foreach (var student in filteredByMarksCount)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
+
         }
     }
 }

@@ -68,5 +68,33 @@ namespace Students
 
             return result;
         }
+
+        public static IEnumerable<T> FilterByPhone<T>(this IEnumerable<T> students, string pattern) where T : Students
+        {
+            var result = from student in students
+                         where student.Tel.StartsWith(pattern)
+                         select student;
+
+            return result;
+        }
+
+        public static object[] FilterByMarks<T>(this IEnumerable<T> students, byte mark) where T :Students
+        {
+            var result = students.Where(s => s.Marks.Contains(mark))
+                .Select(s => new
+                {
+                    FullName = s.FullName(),
+                    Marks = string.Join(" ",s.Marks)
+                }).ToArray();
+
+            return result;
+        }
+
+        public static IEnumerable<T> FilterByMarksCount<T>(this IEnumerable<T> students, byte count) where T : Students
+        {
+            var result = students.Where(s => s.Marks.Count == count);
+
+            return result;
+        }
     }
 }
