@@ -76,5 +76,6 @@ namespace Extension_Methods
             T average = (dynamic)sum / (dynamic)counter;
             return average;
         }
+
     }
 }
