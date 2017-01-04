@@ -11,10 +11,10 @@ namespace Students
         private string firstName;
         private string lastName;
         private ushort age;
-        public long Fn { get; set; }
+        public long Fn { get; private set; }
         public string Tel { get; set; }
         public string Email { get; set; }
-        public List<byte> Marks { get; set; }
+        public List<byte> Marks { get; private set; }
         public int GroupNumber { get; set; }
         public Students(string firstName, string lastName, ushort age, long fn, string tel, string email, List<byte> marks, int groupNumber)
         {
@@ -77,6 +77,11 @@ namespace Students
                 }
                 this.age = value;
             }
+        }
+
+        public string FullName()
+        {
+            return this.firstName + " " + this.lastName;
         }
     }
 }

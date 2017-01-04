@@ -23,6 +23,48 @@ namespace Students
                 new Students("Pesho", "Goshov", 38, 40002, "05-352-6526", "pe66@abv.bg",new List<byte> {
                    6 }, 2)
             };
+
+            /* Problem 3. First before last
+Write a method that from a given array of students finds all students whose 
+first name is before its last name alphabetically.*/
+
+             var filteredStudents= studentsArr.StudentFirstNameBeforeLastName();
+            foreach (Students student in filteredStudents)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
+
+            /* Problem 4. Age range
+Write a LINQ query that finds the first name and last name of all students 
+with age between 18 and 24.*/
+
+            var studentsBetwwen18And24 = studentsArr.FilterByAgeRange(18, 24);
+            foreach (string student in studentsBetwwen18And24)
+            {
+                Console.WriteLine(student);
+            }
+            Console.WriteLine("---------------------");
+
+            /* Problem 5. Order students
+Using the extension methods OrderBy() and ThenBy() with lambda expressions sort 
+the students by first name and last name in descending order. */
+
+            var orderedStudentsByNameLambda =studentsArr.OrderByNameDecidingLambda();
+            foreach (Students student in orderedStudentsByNameLambda)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
+
+            /* Rewrite with Linq*/
+
+            var orderedStudentsByNameLinq = studentsArr.OrderByNameDecidingLinq();
+            foreach (Students student in orderedStudentsByNameLinq)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+            Console.WriteLine("---------------------");
         }
     }
 }
