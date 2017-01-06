@@ -12,15 +12,15 @@ namespace Students
         {
             var studentsArr = new List<Students>()
             {
-                new Students("Kalin", "Atanasov", 21, 45689 , "02-413-4130", "atanasovv@abv.bg", new List<byte> {
+                new Students("Kalin", "Atanasov", 21, 4568206 , "02-413-4130", "atanasovv@abv.bg", new List<byte> {
                     5,2,6,6 }, 2),
-                new Students("Ivan", "Kostov", 18, 45972, "07-409-3313", "i.kostov@abv.bg",new List<byte> {
-                    }, 1),
-                new Students("Maya", "Georgieva", 26, 47900, "07-436-5022", "m.georgieva@gmail.com", new List<byte> {
+                new Students("Ivan", "Kostov", 18, 4597205, "07-409-3313", "i.kostov@abv.bg",new List<byte> {
+                    }, 3),
+                new Students("Maya", "Georgieva", 26, 4790204, "07-436-5022", "m.georgieva@gmail.com", new List<byte> {
                     },2),
-                new Students("Stoyko", "Stoqnov", 17, 43876, "02-285-8624", "ssm_98@gmail.com", new List<byte> { 
+                new Students("Stoyko", "Stoqnov", 17, 4387205, "02-285-8624", "ssm_98@gmail.com", new List<byte> {
                   2,4  }, 1),
-                new Students("Pesho", "Goshov", 38, 40002, "05-352-6526", "pe66@abv.bg",new List<byte> {
+                new Students("Pesho", "Goshov", 38, 4000206, "05-352-6526", "pe66@abv.bg",new List<byte> {
                    6 }, 2)
             };
 
@@ -28,7 +28,7 @@ namespace Students
 Write a method that from a given array of students finds all students whose 
 first name is before its last name alphabetically.*/
 
-             var filteredStudents= studentsArr.StudentFirstNameBeforeLastName();
+            var filteredStudents = studentsArr.StudentFirstNameBeforeLastName();
             foreach (Students student in filteredStudents)
             {
                 Console.WriteLine($"{student.FirstName} {student.LastName}");
@@ -50,7 +50,7 @@ with age between 18 and 24.*/
 Using the extension methods OrderBy() and ThenBy() with lambda expressions sort 
 the students by first name and last name in descending order. */
 
-            var orderedStudentsByNameLambda =studentsArr.OrderByNameDecidingLambda();
+            var orderedStudentsByNameLambda = studentsArr.OrderByNameDecidingLambda();
             foreach (Students student in orderedStudentsByNameLambda)
             {
                 Console.WriteLine($"{student.FirstName} {student.LastName}");
@@ -132,6 +132,45 @@ Use extension methods.*/
             }
             Console.WriteLine("---------------------");
 
+            /*Problem 15. Extract marks
+Extract all Marks of the students that enrolled in 2006. 
+(The students from 2006 have 06 as their 5-th and 6-th digit in the FN).*/
+
+            var extractStudentsByEnterYear = studentsArr
+                .Where(student => ((student.Fn / 10) % 10 == 0) && (student.Fn % 10 == 6))
+                .Select(s => new
+                {
+                    FullName = s.FullName(),
+                    Marks = string.Join(" ", s.Marks)
+                }).ToArray();
+
+            foreach (var student in extractStudentsByEnterYear)
+            {
+                Console.WriteLine($"{student.FullName} {student.Marks}");
+            }
+            Console.WriteLine("---------------------");
+
+            /*Problem 16.* Groups
+Create a class Group with properties GroupNumber and DepartmentName.
+Introduce a property GroupNumber in the Student class.
+Extract all students from "Mathematics" department.
+Use the Join operator.*/
+            var groups = new List<Group>() {
+             new Group(1, "History"),
+             new Group(2, "Mathematics"),
+             new  Group(3, "Literature")
+             };
+            var studentsWithMathematics = from student in studentsArr
+                                          join gr in groups
+                                          on student.GroupNumber equals gr.GroupNumber
+                                          where student.GroupNumber == 2
+                                          select new { student.FirstName, student.LastName,                                 gr.DepartmentName };
+
+            foreach (var student in studentsWithMathematics)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName} {student.DepartmentName}");
+            }
+            Console.WriteLine("---------------------");
         }
     }
 }
