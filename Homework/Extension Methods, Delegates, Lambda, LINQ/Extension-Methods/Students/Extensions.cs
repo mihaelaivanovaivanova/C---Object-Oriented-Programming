@@ -96,5 +96,15 @@ namespace Students
 
             return result;
         }
+
+        public static IEnumerable<IGrouping<int,T>> GroupByGroupNum<T>(this IEnumerable<T> students) where T : Students
+        {
+            var result = from student in students
+                         orderby student.GroupNumber
+                         group student by student.GroupNumber into aGroup
+                         select aGroup;
+
+            return result.ToList();
+        }
     }
 }

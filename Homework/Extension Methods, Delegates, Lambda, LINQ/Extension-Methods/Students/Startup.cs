@@ -171,6 +171,57 @@ Use the Join operator.*/
                 Console.WriteLine($"{student.FirstName} {student.LastName} {student.DepartmentName}");
             }
             Console.WriteLine("---------------------");
+
+            /*Problem 17. Longest string
+Write a program to return the string with maximum length from an array of strings.
+Use LINQ.*/
+
+            List<string> stringContainer = new List<string>
+            {
+                "some",
+                "some string",
+                "long long sring",
+                "just a string",
+                "some very mery hyper long string here",
+                "a"
+            };
+
+            string longestString = stringContainer.OrderByDescending(x => x.Length)
+                .First();
+
+            Console.WriteLine($"Longest string: { longestString}");
+            Console.WriteLine("---------------------");
+
+            /* Problem 18.Grouped by GroupNumber
+Create a program that extracts all students grouped by GroupNumber and then prints them to the console.
+Use LINQ.*/
+
+            var groupedByGroupNumber = studentsArr.OrderBy(s=>s.GroupNumber)
+                .GroupBy(s => s.GroupNumber);
+
+            foreach (var group in groupedByGroupNumber)
+            {
+                foreach (var student in group)
+                {
+                    Console.WriteLine($"Student {student.FirstName} {student.LastName} is in group {group.Key}" );
+                }
+            }
+
+            Console.WriteLine("---------------------");
+
+            /* Problem 19. Grouped by GroupName extensions
+Rewrite the previous using extension methods.*/
+
+            var groupedByGroupNumberExt = studentsArr.GroupByGroupNum();
+            foreach (var group in groupedByGroupNumberExt)
+            {
+                foreach (var student in group)
+                {
+                    Console.WriteLine($"Student {student.FirstName} {student.LastName} is in group {group.Key}");
+                }
+            }
+            Console.WriteLine("---------------------");
+
         }
     }
 }
