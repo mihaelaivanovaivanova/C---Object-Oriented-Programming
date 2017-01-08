@@ -31,9 +31,9 @@ namespace School.Utilities
             }
         }
 
-        public static void ValidateElementExisting(IList<string> someList,string element)
+        public static void ValidateElementExisting(ICollection<string> someList,string element)
         {
-            if (someList.IndexOf(element) < 0)
+            if (someList.Contains(element))
             {
                 throw new ArgumentOutOfRangeException(Constants.ElementDoesNotExistException);
             }

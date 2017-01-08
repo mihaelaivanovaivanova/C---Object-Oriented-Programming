@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace School.People
 {
-    public class Teacher:Person, IComment
+    public class Teacher:Person, IComment, ITeacher
     {
-        private IList<Disciplines> setOfDisciplines;
-        private IList<string> comments;
+        private ICollection<Disciplines> setOfDisciplines;
+        private ICollection<string> comments;
 
         public Teacher(string firstName, string lastName) : base(firstName, lastName)
         {
@@ -24,7 +24,7 @@ namespace School.People
 
         public void RemoveDiscipline(Disciplines discipline)
         {
-            if (setOfDisciplines.IndexOf(discipline)<0)
+            if (setOfDisciplines.Contains(discipline))
             {
                 throw new ArgumentOutOfRangeException("The discipline does not exist in the list!");
             }
@@ -40,7 +40,7 @@ namespace School.People
         }
         public void RemoveComment(string comment)
         {
-            if (comments.IndexOf(comment) < 0)
+            if (comments.Contains(comment))
             {
                 throw new ArgumentOutOfRangeException("This comment does not exist!");
             }

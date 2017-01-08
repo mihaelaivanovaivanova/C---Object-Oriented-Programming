@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace School
 {
-   public class Class:IComment
+   public class Class:IComment, IClass
     {
-        private IList<Person> studentsInClass;
-        private IList<Person> teachersInClass;
-        private IList<string> comments;
+        private ICollection<Person> studentsInClass;
+        private ICollection<Person> teachersInClass;
+        private ICollection<string> comments;
         
         public Class()
         {
@@ -48,7 +48,7 @@ namespace School
 
         public void RemoveStudent(Student student)
         {
-            if (this.studentsInClass.IndexOf(student) < 0)
+            if (this.studentsInClass.Contains(student))
             {
                 throw new ArgumentOutOfRangeException("This student does not exist in the class");
             }
@@ -62,9 +62,9 @@ namespace School
             Console.WriteLine($"Teacher was successfully added!");
         }
 
-        public void RemoveReacher(Teacher teacher)
+        public void RemoveTeacher(Teacher teacher)
         {
-            if (this.teachersInClass.IndexOf(teacher) < 0)
+            if (this.teachersInClass.Contains(teacher))
             {
                 throw new ArgumentOutOfRangeException("This student does not exist in the class");
             }
