@@ -40,7 +40,7 @@ namespace School.People
         }
         public void RemoveComment(string comment)
         {
-            if (comments.Contains(comment))
+            if (!comments.Contains(comment))
             {
                 throw new ArgumentOutOfRangeException("This comment does not exist!");
             }

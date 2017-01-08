@@ -33,7 +33,7 @@ namespace School.Utilities
 
         public static void ValidateElementExisting(ICollection<string> someList,string element)
         {
-            if (someList.Contains(element))
+            if (!someList.Contains(element))
             {
                 throw new ArgumentOutOfRangeException(Constants.ElementDoesNotExistException);
             }

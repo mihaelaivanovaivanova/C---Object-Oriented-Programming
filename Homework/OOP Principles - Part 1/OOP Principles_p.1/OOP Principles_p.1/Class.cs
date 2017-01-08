@@ -48,7 +48,7 @@ namespace School
 
         public void RemoveStudent(Student student)
         {
-            if (this.studentsInClass.Contains(student))
+            if (!this.studentsInClass.Contains(student))
             {
                 throw new ArgumentOutOfRangeException("This student does not exist in the class");
             }
@@ -64,7 +64,7 @@ namespace School
 
         public void RemoveTeacher(Teacher teacher)
         {
-            if (this.teachersInClass.Contains(teacher))
+            if (!this.teachersInClass.Contains(teacher))
             {
                 throw new ArgumentOutOfRangeException("This student does not exist in the class");
             }
