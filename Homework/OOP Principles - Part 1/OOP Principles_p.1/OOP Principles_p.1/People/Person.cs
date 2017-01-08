@@ -3,7 +3,7 @@ using School.Utilities;
 
 namespace School.People
 {
-    class Person
+    public class Person
     {
         private string firstName;
         private string lastName;
