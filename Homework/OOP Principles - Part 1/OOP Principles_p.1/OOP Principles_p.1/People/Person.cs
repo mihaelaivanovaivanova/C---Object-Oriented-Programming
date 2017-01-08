@@ -14,7 +14,7 @@ namespace School.People
             this.LastName = lastName;
         }
 
-        public string FirstName
+        protected string FirstName
         {
             get
             {
@@ -27,7 +27,7 @@ namespace School.People
             }
         }
 
-        public string LastName
+        protected string LastName
         {
             get
             {
@@ -40,7 +40,7 @@ namespace School.People
             }
         }
 
-        public string FullName
+        protected string FullName
         {
             get
             {

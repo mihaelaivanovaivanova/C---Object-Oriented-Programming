@@ -18,10 +18,10 @@ namespace School
             this.comments = new List<string>();
         }
 
-        public int NumberOfLectures { get; set; }
-        public int NumberOfExcersises { get; set; }
+        protected int NumberOfLectures { get; set; }
+        protected int NumberOfExcersises { get; set; }
 
-        public string Name
+        protected string Name
         {
             get
             {

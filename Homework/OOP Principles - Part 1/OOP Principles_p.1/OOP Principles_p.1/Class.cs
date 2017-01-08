@@ -24,7 +24,7 @@ namespace School
             this.comments = new List<string>();
         }
 
-        public string UniqueTextIdentifier { get; }
+        internal string UniqueTextIdentifier { get; }
 
         public void AddComment(string comment)
         {

@@ -18,7 +18,7 @@ namespace School.People
             this.comments = new List<string>();
         }
 
-        public int ClassNumber
+        internal int ClassNumber
         {
             get
             {
