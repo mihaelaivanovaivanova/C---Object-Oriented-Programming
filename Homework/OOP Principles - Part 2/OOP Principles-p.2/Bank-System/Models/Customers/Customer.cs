@@ -17,18 +17,15 @@ namespace Bank_System.Models.Customers
         private string email;
         private IEnumerable<IAccount> customerAccounts;
 
-        public Customer(CustomerType customerType, string firstName, string lastName, string address, string telephoneNumber)
+        public Customer(CustomerType customerType, string firstName, string lastName, string address, string telephoneNumber, string email=null)
         {
             this.CustomerType = customerType;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Address = address;
             this.TelephoneNumber = telephoneNumber;
-        }
-
-        public Customer(CustomerType customerType, string firstName, string lastName, string address, string telephoneNumber, string email):this(customerType,firstName,lastName,address,telephoneNumber)
-        {
             this.Email = email;
+            this.customerAccounts = new List<IAccount>();
         }
 
         public CustomerType CustomerType { get; set; }
@@ -40,7 +37,8 @@ namespace Bank_System.Models.Customers
             }
             private set
             {
-
+                Validations.NameValidation(value);
+                this.firstName = value;
             }
         }
 
@@ -52,7 +50,8 @@ namespace Bank_System.Models.Customers
             }
             private set
             {
-
+                Validations.NameValidation(value);
+                this.lastName = value;
             }
         }
 
@@ -64,7 +63,8 @@ namespace Bank_System.Models.Customers
             }
             set
             {
-
+                Validations.AddressValidation(value);
+                this.address = value;
             }
         }
 
@@ -76,7 +76,8 @@ namespace Bank_System.Models.Customers
             }
             set
             {
-
+                Validations.TelephoneNumberValidation(value);
+                this.telephoneNumber = value;
             }
         }
 
@@ -88,7 +89,8 @@ namespace Bank_System.Models.Customers
             }
             set
             {
-
+                Validations.EmailValidation(value);
+                this.email = value;
             }
         }
 
