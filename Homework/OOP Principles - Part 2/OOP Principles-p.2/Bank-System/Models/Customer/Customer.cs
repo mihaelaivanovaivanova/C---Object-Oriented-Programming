@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bank_System.Models.Customers
 {
-    class Customer:ICustomer
+    class Customer : ICustomer
     {
         private string firstName;
         private string lastName;
@@ -17,7 +17,7 @@ namespace Bank_System.Models.Customers
         private string email;
         private IEnumerable<IAccount> customerAccounts;
 
-        public Customer(CustomerType customerType, string firstName, string lastName, string address, string telephoneNumber, string email=null)
+        public Customer(CustomerType customerType, string firstName, string lastName, string address, string telephoneNumber, string email = null)
         {
             this.CustomerType = customerType;
             this.FirstName = firstName;

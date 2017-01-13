@@ -6,33 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank_System.Contracts
 {
-    public interface ICustomer
+    class ICustomer
     {
-        string FirstName
-        {
-            get;
-        }
-        string LastName
-        {
-            get;
-        }
-
-        string Address
-        {
-            get;
-            set;
-        }
-
-        string TelephoneNumber
-        {
-            get;
-            set;
-        }
-
-        string Email
-        {
-            get;
-            set;
-        }
     }
 }
