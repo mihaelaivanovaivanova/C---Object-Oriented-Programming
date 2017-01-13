@@ -15,6 +15,10 @@ namespace Bank_System.Utilities
         public static string telephoneNumberLengthValidationExc = $"Phone number length must be between {minTelephoneLength} and {maxTelephoneLength} symbols long!";
         public const string telephoneNumberNullValidationExc = "Phone number can not have a null value!";
         public static string emailLengthValidationExc = $"Email length must be between {minEmailLength} and {maxEmailLength} symbols long!";
+        public const string negativeBalanceValidationExc = "The start balance can not be a negative value!";
+        public const string negativeInterestValidationExc = "Interest can not be a negative value!";
+        public static string negativeMonthsValidationExc = "Number of months can not be a negatove number!";
+    
         public const int minNameLength = 2;
         public const int maxNameLength = 30;
         public const int minAddressLength = 10;
@@ -23,5 +27,6 @@ namespace Bank_System.Utilities
         public const int maxTelephoneLength = 20;
         public const int minEmailLength = 5;
         public const int maxEmailLength = 20;
+
     }
 }

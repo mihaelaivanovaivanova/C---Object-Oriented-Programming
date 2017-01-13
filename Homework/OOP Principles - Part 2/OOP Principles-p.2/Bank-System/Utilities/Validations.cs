@@ -51,5 +51,29 @@ namespace Bank_System.Utilities
                 throw new ArgumentOutOfRangeException(Constants.emailLengthValidationExc);
             }
         }
+
+        public static void BalanceValidation(decimal balance)
+        {
+            if (balance<0)
+            {
+                throw new ArgumentOutOfRangeException(Constants.negativeBalanceValidationExc);
+            }
+        }
+
+        public static void InterestValidation(decimal interest)
+        {
+            if (interest < 0)
+            {
+                throw new ArgumentOutOfRangeException(Constants.negativeInterestValidationExc);
+            }
+        }
+
+        public static void MonthsValidation(int periodOfMonths)
+        {
+            if (periodOfMonths < 0)
+            {
+                throw new ArgumentOutOfRangeException(Constants.negativeMonthsValidationExc);
+            }
+        }
     }
 }

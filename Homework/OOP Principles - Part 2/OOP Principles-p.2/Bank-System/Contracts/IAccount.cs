@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace Bank_System.Contracts
 {
-    class IAccount
+    public interface IAccount
     {
+        ICustomer Customer
+        {
+            get;
+        }
+
+        decimal Balance
+        {
+            get;
+        }
+
+        decimal Interest
+        {
+            get;
+        }
+
+        decimal CalculateInterest(int periodOfMonths);
     }
 }
